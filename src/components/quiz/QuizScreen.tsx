@@ -43,6 +43,8 @@ export function QuizScreen({
   const isLast = index === questions.length - 1;
   const progress = ((index + (answered ? 1 : 0)) / questions.length) * 100;
 
+  if (!question) return null;
+
   function choose(optionIndex: number) {
     if (answered) return;
     setSelected(optionIndex);

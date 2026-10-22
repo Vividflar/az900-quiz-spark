@@ -151,7 +151,10 @@ function Index() {
       />
     );
   } else {
-    content = <HomeScreen starting={starting} onStart={start} />;
+    content = <HomeScreen
+      starting={starting}
+      onStart={(domain, count) => start({ domain, count })}
+    />;
   }
 
   return (

@@ -35,7 +35,7 @@ describe("quiz logic", () => {
     const shuffled = shuffle(bank, fixedRng);
     expect(shuffled).toHaveLength(bank.length);
     expect(new Set(shuffled.map((r) => r.id)).size).toBe(bank.length);
-    expect(bank[0].id).toBe("q0"); // input untouched
+    expect(bank[0]?.id).toBe("q0"); // input untouched
   });
 
   it("picks exactly the requested number of questions", () => {
