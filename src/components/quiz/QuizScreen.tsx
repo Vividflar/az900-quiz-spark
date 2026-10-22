@@ -44,23 +44,24 @@ export function QuizScreen({
   const progress = ((index + (answered ? 1 : 0)) / questions.length) * 100;
 
   if (!question) return null;
+  const current = question;
 
   function choose(optionIndex: number) {
     if (answered) return;
     setSelected(optionIndex);
-    const isCorrect = optionIndex === question.correct_index;
+    const isCorrect = optionIndex === current.correct_index;
     if (!isCorrect) {
       setMissed((prev) => [
         ...prev,
         {
-          question: question.question,
-          correctAnswer: question.options[question.correct_index] ?? "",
-          explanation: question.explanation,
+          question: current.question,
+          correctAnswer: current.options[current.correct_index] ?? "",
+          explanation: current.explanation,
         },
       ]);
     }
     // Best-effort logging — the quiz never blocks on it.
-    void recordAttempt(sessionId, question.id, optionIndex, isCorrect);
+    void recordAttempt(sessionId, current.id, optionIndex, isCorrect);
     requestAnimationFrame(() => nextRef.current?.focus());
   }
 
