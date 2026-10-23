@@ -1,26 +1,25 @@
-# Unofficial AZ-900  Smart Quiz Coach
+## How the questions were made
 
-Implement exactly the screenshot and nothing else
+The practice questions are original, AI-written study questions. They were
+written in advance with Claude using a structured prompt, then reviewed
+against Microsoft Learn. They are not real exam questions.
 
-This project was built with [Lovable](https://lovable.dev).
+## Roadmap
 
-**Live app**: https://az900-quiz-spark.lovable.app
+Smart Quiz Builder v1 is a complete quiz and readiness tool. It is designed
+so that future features build on data it already stores.
 
-## Build with Lovable
+### Planned upgrade: Flashcard Coach
+Turn the questions a learner got wrong into flip cards for quick review.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/76dea59b-87d3-43d2-8cd4-7ecb7f3a87a6).
+Why this is a small step: every answer is already saved with its question,
+domain, and correct/incorrect result. The upgrade adds one table
+(flashcard_status) and one review screen. No existing table changes.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+### Later ideas
+- A larger question bank and difficulty levels
+- Spaced-repetition scheduling for flashcards
+- Fresh AI-generated questions on demand, using a server-side function,
+  with the question bank as a fallback
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+> Unofficial AZ-900 prep tool. Not affiliated with or endorsed by Microsoft.
